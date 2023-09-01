@@ -16,6 +16,8 @@ const pintarCarrito = () => {
     modalContainer.style.display = "none";
   });
 
+ 
+
   modalHeader.append(modalbutton);
 
   carrito.forEach((product) => {
@@ -26,7 +28,6 @@ const pintarCarrito = () => {
         <h3>${product.nombre}</h3>
         <p>${product.precio} $</p>
         <span class="restar"> - </span>
-        <!--recomiendo no escribir la palabra cantidad para que no quede tan largo :)-->
         <p>${product.cantidad}</p>
         <span class="sumar"> + </span>
         <p>Total: ${product.cantidad * product.precio} $</p>
@@ -67,7 +68,44 @@ const pintarCarrito = () => {
   totalBuying.className = "total-content";
   totalBuying.innerHTML = `Total a pagar: ${total} $`;
   modalContainer.append(totalBuying);
+
+  const finalizarCompraButton = document.createElement("button");
+   finalizarCompraButton.innerText = "Finalizar Compra";
+  finalizarCompraButton.className = "finalizar-compra-button";
+
+  
+  finalizarCompraButton.addEventListener("click", () => {
+    finalizarCompra(); 
+  });
+
+  
+  modalContainer.append(finalizarCompraButton);
 };
+
+
+
+
+const finalizarCompra = () => {
+ 
+  
+  
+     
+   Swal.fire(
+    'Compra Finalizada',
+    'Gracias por elegirnos',
+    'success'
+  )
+
+
+  carrito = []; 
+  saveLocal(); 
+  pintarCarrito();
+
+  
+ 
+};
+
+
 
 verCarrito.addEventListener("click", pintarCarrito);
 
@@ -84,6 +122,8 @@ const eliminarProducto = (id) => {
   saveLocal();
   pintarCarrito();
 };
+
+
 
 const carritoCounter = () => {
   cantidadCarrito.style.display = "block";

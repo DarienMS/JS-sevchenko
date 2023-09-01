@@ -17,7 +17,7 @@ const productos = [
   },
   {
     id: 3,
-    nombre: "Hamburguesa 2",
+    nombre: "Hamburguesa Completa",
     precio: 500,
     img:
     "./img/hamburguesa.jpg",
