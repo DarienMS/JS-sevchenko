@@ -4,7 +4,7 @@ const pintarCarrito = () => {
   const modalHeader = document.createElement("div");
   modalHeader.className = "modal-header";
   modalHeader.innerHTML = `
-      <h1 class="modal-header-title">Carrito.</h1>
+      <h1 class="modal-header-title">Cart</h1>
     `;
   modalContainer.append(modalHeader);
 
@@ -66,11 +66,11 @@ const pintarCarrito = () => {
 
   const totalBuying = document.createElement("div");
   totalBuying.className = "total-content";
-  totalBuying.innerHTML = `Total a pagar: ${total} $`;
+  totalBuying.innerHTML = `Total: ${total} $`;
   modalContainer.append(totalBuying);
 
   const finalizarCompraButton = document.createElement("button");
-   finalizarCompraButton.innerText = "Finalizar Compra";
+   finalizarCompraButton.innerText = "Purchase";
   finalizarCompraButton.className = "finalizar-compra-button";
 
   
@@ -91,8 +91,8 @@ const finalizarCompra = () => {
   
      
    Swal.fire(
-    'Compra Finalizada',
-    'Gracias por elegirnos',
+    'Successfully',
+    'Thank you for choosing us',
     'success'
   )
 
